@@ -117,36 +117,48 @@ inputElement.addEventListener('keypress', function(event) {
 
 sendbtn.addEventListener('click', function(event) {
     event.preventDefault();
-    let myvalue = inputElement.value.trim();
-    console.log("Message :", myvalue);
-    
-    
-    if (myvalue === "") {
-        inputElement.classList.add('vide');
-        setTimeout(function() {
-            inputElement.classList.remove('vide');
-        }, 400);
-        return;
-    }
-    
-    var userMessage = createUserMessage(myvalue);
-    var chatContainer = document.getElementById('chat-container');
-    chatContainer.appendChild(userMessage);
-    
-    if (myvalue === "Bonjour") {
-        setTimeout(function() {
-            var botMessage = createBotMessageBonjour();
-            chatContainer.appendChild(botMessage);
-        }, 200);
-    }
-    else {
-        setTimeout(function() {
-            var botMessage = createBotMessage();
-            chatContainer.appendChild(botMessage);
-        }, 200);
-    }
-    
-    inputElement.value = "";
+        let myvalue = inputElement.value.trim();
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/get_value', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        if (myvalue === "") {
+            inputElement.classList.add('vide');
+            setTimeout(function() {
+                inputElement.classList.remove('vide');
+            }, 400);
+            return;
+        }
+
+        var userMessage = createUserMessage(myvalue);
+        var chatContainer = document.getElementById('chat-container');
+        chatContainer.appendChild(userMessage);
+
+        if (myvalue !== ""  && myvalue !== "Bonjour") {
+            fetch('/get_value', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: myvalue })
+            })
+            .then(response => response.json())
+            .then(generatedText => {
+                // Affiche une alerte avec le texte généré
+                var BotMessage = createBotMessage(generatedText);
+                var chatContainerr = document.getElementById('chat-container');
+                chatContainerr.appendChild(BotMessage);
+                 
+            })
+            .catch(error => console.error('Erreur lors de la récupération de la valeur générée:', error));
+        } 
+        if (myvalue === "Bonjour") {
+            setTimeout(function() {
+                var botMessage = createBotMessageBonjour();
+                chatContainer.appendChild(botMessage);
+            }, 200);
+        }
+        inputElement.value = "";
 });
 
 // Trash alert sur l'ecran
