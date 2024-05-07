@@ -154,6 +154,10 @@ const trash = document.getElementById('trash');
 trash.addEventListener('click', function() {
     location.reload();
 });
+const trash11 = document.getElementById('trash11');
+trash11.addEventListener('click', function() {
+    location.reload();
+});
 
 // Google search
 var inputsearch = document.getElementById("googles");
