@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+}
+
+/*----Header----*/
+header{
+    display: flex;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+}
+h1{
+    position: absolute;
+    margin-top: 3.5vh;
+    font-weight: 900;
+    font-size: 4.5vmin;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight:  1000;
+}
+.Mirai{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight:  1000;
+}
+.search{
+    width: 17vw;
+    height: max(7vh, 3vh);
+    background-color: white;
+    position: absolute;
+    margin-top: 2vh;
+    right : 2vw;
+    border-radius: 1.1vw;
+    border : 0.2vw solid rgb(70, 69, 69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loop{
+    left: 0.5vw;
+    top : 0.5vh;
+    position: absolute;
+    max-width: 2.5vw;
+    min-width: 1.5vw;
+    height: auto;
+    cursor: pointer;
+}
+button{
+    border: none;
+}
+.search input[type="text"] {
+    border: none;
+    color: #000000;
+    font-size: 1.1vmin;
+    font-size: 1.15vmax;
+    position: absolute;
+    width: calc(93% - 40px); /* Largeur de l'input - la taille du bouton de soumission */
+    top: 50%;
+    left: 3dvw; /* Marge à gauche pour laisser de la place au bouton de soumission */
+    transform: translateY(-50%);
+    font-weight: 500;
+  }
+  
+
+form #type{
+    position: absolute;
+    left: 29vw;
+}
+.search input[type="text"]::placeholder{
+    color : #9197B3;
+    font-size: 1.1vw;
+}
+.search input[type="text"]:focus {
+    outline: none;
+}
+#trash{
+    position: absolute;
+    cursor: pointer;
+    width: 3.5dvw;
+    height: auto;
+    transition: all 0.3s;
+    margin-right: 20.5dvw;
+}
+.hidden{
+    position: absolute;
+    display: none;
+}
+
+.search-form{
+    position: absolute;
+}
+/*----Body----*/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-container{
+    width: 98vw;
+    height: 98vh;
+    border-radius: 1.5vw;
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#type {
+    bottom: 3dvh;
+    position: absolute;
+    width: 42vw;
+    height: 6.5dvh;
+    background-color: black;
+    border: none;
+    border-radius: 5vw;
+    padding: 0.7vw;
+    font-family: poppins, sans-serif;
+    color: white;
+    font-size: 1.15vmax;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#send {
+    position: absolute; /* Positionnement absolu par rapport à l'input */
+    top: 94vh; /* Aligner verticalement au centre */
+    right: 30%; /* Marge de 5px à droite de l'input */
+    transform: translateY(-50%); /* Décalage de moitié de la hauteur pour le centrage vertical */
+    color: #757575; /* Couleur de l'icône */
+    width: 2dvw; /* Largeur de l'icône */
+    height: auto; /* Hauteur automatique pour maintenir le rapport d'aspect */
+}
+
+
+#type:focus + #send{
+    color : white;
+    cursor: pointer;
+}
+
+
+.chat-container{
+    background-color: none;
+    width: 42vw;
+    height: 80vh;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    color : grey;
+    font-size: small;
+    margin: 30rem 0 .8rem 0;
+}
+.center{
+    width: 42vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.usermssg {
+    flex: 1;
+    max-width: 35vw; /* Largeur maximale */
+    word-wrap: break-word;
+    background-color: white;
+    padding: 0.5vw;
+    border-radius: 0.7vw;
+    font-family: Montserrat, sans-serif;
+    border: 0.1vw solid #DDDDDD;
+    box-shadow: 0 0 3px 0px grey;
+    
+  }
+
+
+.ensemble-user{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    margin-bottom: 2vh;
+    align-items: flex-end;
+}
+
+.userm{
+    margin-left: 1vw;
+    position: relative;
+    height: auto;
+    width: 2.5vw;
+}
+
+/*BOT*/
+
+.botmssg {
+    flex: 1;
+    max-width: 35vw; /* Largeur maximale */
+    word-wrap: break-word;
+    background-color: white;
+    padding: 0.5vw;
+    border-radius: 0.7vw;
+    font-family: Montserrat, sans-serif;
+    border: 0.1vw solid #DDDDDD;
+    box-shadow: 0 0 3px 0px grey;
+  }
+
+
+.ensemble-bot{
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    align-items: flex-end;
+    margin-right: auto;
+}
+
+.botm{
+    margin-right: 1vw;
+    position: relative;
+    height: auto;
+    width: 2.5vw;
+}
+
+.vide {
+    animation: erreur 0.3s steps(1) forwards;
+}
+
+@keyframes erreur {
+    0% {
+        outline: 0.2vw solid red;
+    }
+    100% {
+        outline: none;
+    }
+}
+
+@media (max-width: 1000px) { 
+    .search {
+        height: 5vh;
+        border : 0.4vw solid rgb(70, 69, 69);
+    }
+    #send {
+        bottom: 4.5dvh;
+    }
+}
+
+@media (max-width: 480px) {  
+    .search {
+        height: 3vh;
+        border : 0.4vw solid rgb(70, 69, 69);
+    }
+}
+
+@media (max-width: 600px) {  
+    .chat-container{
+        width: 95dvw;
+        height: 80dvh;
+    }
+    .botmssg{
+        max-width: 75dvw;
+    }
+    .usermssg{
+        max-width: 75dvw;
+    }
+    .botm{
+        width: 4dvh;
+        margin-right: 2dvw;
+    }
+    .userm{
+        width: 4dvh;
+        margin-left: 2dvw;
+    }
+    #type{
+        width: 85dvw;
+        height: 5.5dvh;
+        padding: clamp(2.2vw, 3vw, 2.7vw);
+        border-radius: 5dvw;
+
+    }
+    form #type{
+        left: 7.5vw;
+        
+    }
+    #type::placeholder {
+        font-size: 3dvw; /* Augmentez la taille de la police du placeholder */
+    }
+    #send{
+        width : 2dvw;
+    }
+    .center{
+        width: 95dvw;
+        height: 80dvh;
+    }
+    .search{
+        display: none;
+    }
+    .hidden{
+        position: absolute;
+        top : 2.8dvh;
+        right : 4dvw;
+        display: flex;
+    }
+    #send {
+        top: 94vh; /* Aligner verticalement au centre */
+        right: 10vw; /* Marge de 5px à droite de l'input */
+        width: 4dvw; /* Largeur de l'icône */
+    }
+}
