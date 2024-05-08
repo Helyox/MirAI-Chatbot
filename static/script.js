@@ -69,9 +69,6 @@ inputElement.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
         let myvalue = inputElement.value.trim();
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/get_value', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
 
         if (myvalue === "") {
             inputElement.classList.add('vide');
@@ -95,11 +92,9 @@ inputElement.addEventListener('keypress', function(event) {
             })
             .then(response => response.json())
             .then(generatedText => {
-                // Affiche une alerte avec le texte généré
                 var BotMessage = createBotMessage(generatedText);
                 var chatContainerr = document.getElementById('chat-container');
                 chatContainerr.appendChild(BotMessage);
-                 
             })
             .catch(error => console.error('Erreur lors de la récupération de la valeur générée:', error));
         } 
@@ -114,13 +109,9 @@ inputElement.addEventListener('keypress', function(event) {
 });
 
 
-
 sendbtn.addEventListener('click', function(event) {
     event.preventDefault();
         let myvalue = inputElement.value.trim();
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/get_value', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
 
         if (myvalue === "") {
             inputElement.classList.add('vide');
@@ -144,7 +135,6 @@ sendbtn.addEventListener('click', function(event) {
             })
             .then(response => response.json())
             .then(generatedText => {
-                // Affiche une alerte avec le texte généré
                 var BotMessage = createBotMessage(generatedText);
                 var chatContainerr = document.getElementById('chat-container');
                 chatContainerr.appendChild(BotMessage);
