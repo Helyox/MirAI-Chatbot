@@ -9,3 +9,5 @@
 - Scalable Architecture: Designed for scalability, ensuring optimal performance even under heavy loads.
 
 Get started with `MirAI` Chatbot and explore the possibilities of conversational AI for your projects!
+
+![Display](https://image.noelshack.com/fichiers/2024/19/3/1715185963-image-2024-05-08-183244430.png)
